@@ -1,0 +1,222 @@
+:root {
+  --clr-bcg: rgba(243, 243, 243, 0.601);
+  --clr-font: #282c35;
+  --clr-primary: rgba(110, 190, 247, 0.5);
+  --clr-dark: #000;
+  --clr-light: #fff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--clr-bcg);
+  color: var(--clr-font);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.spinner {
+  margin: 100px auto;
+  width: 80px;
+  height: 80px;
+  position: relative;
+  text-align: center;
+
+  -webkit-animation: sk-rotate 2s infinite linear;
+  animation: sk-rotate 2s infinite linear;
+}
+
+.dot1,
+.dot2 {
+  width: 60%;
+  height: 60%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  background-color: var(--clr-primary);
+  border-radius: 100%;
+
+  -webkit-animation: sk-bounce 2s infinite ease-in-out;
+  animation: sk-bounce 2s infinite ease-in-out;
+}
+
+.dot2 {
+  top: auto;
+  bottom: 0;
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+}
+
+@-webkit-keyframes sk-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes sk-rotate {
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes sk-bounce {
+  0%,
+  100% {
+    -webkit-transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes sk-bounce {
+  0%,
+  100% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}
+.dark-theme {
+  --clr-bcg: #282c35;
+  --clr-font: #fff;
+  --clr-dark:#fff;
+  --clr-light: #000;
+    --clr-primary: rgba(110, 190, 247, 0.5);
+
+
+}
+.light-theme {
+  --clr-bcg: rgba(243, 243, 243, 0.351);
+  --clr-font: #282c35;
+    --clr-primary: rgb(110, 190, 247);
+
+  --clr-dark: #000;
+    --clr-light: #fff;
+
+}
+.results
+{
+  display:grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:2rem;
+}
+.result {
+  background-color: var(--clr-light);
+  padding: 1rem 2rem;
+ 
+  border-radius: 0.25rem;
+}
+
+h1 {
+  color: var(--clr-primary);
+}
+.title {
+  margin-bottom: 0.25rem;
+  line-height: 1.7;
+  font-size: 1.25rem;
+}
+.info {
+  margin-bottom: 0.5rem;
+
+  color: #999;
+}
+.read-link {
+  font-size: 0.85rem;
+  margin-right: 0.75rem;
+  text-transform: capitalize;
+  color: var(--clr-primary);
+}
+
+.btn {
+  border: none;
+  outline: none;
+}
+.btn-color
+{
+    border: none;
+  outline: none;
+
+  background-color: var(--clr-primary);
+  color: var(--clr-light);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+margin: 0 1rem;
+}
+.switch-btn {
+  position: absolute;
+  background-color: var(--clr-dark);
+  top: 7%;
+  right: 7%;
+  width: 120px;
+  height: 3rem;
+  z-index: 999;
+  display: flex;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: space-around;
+  border: none;
+  transition: all 0.3ms linear;
+}
+.switch {
+    position: absolute;
+  top: 1px;
+  left: 10px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  box-shadow: inset 20px 0px 0px 0px var(--clr-light);
+  margin: 0;
+  display: block;
+  transition: all 0.3ms linear;
+}
+.slide .switch {
+  left: 60%;
+  background-color: var(--clr-light);
+  box-shadow: none;
+
+}
+
+.form-control,.form-control:focus {
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  letter-spacing:0.15rem;
+  border-radius: 0;
+  border-bottom: 1px solid var(--clr-primary);
+  color: var(--clr-dark);
+  font-size: 1.25rem;
+box-shadow: none;
+  background-color: transparent;
+  width: 75%;
+}
+.form-control::placeholder
+{
+  text-transform: capitalize;
+  letter-spacing:0.25rem
+}
+.btn-color:disabled
+{
+  cursor: not-allowed !important;
+}
+@media screen and (max-width :991.98px)
+{
+  .results
+  {
+    grid-template-columns: 1fr;
+  }
+}
